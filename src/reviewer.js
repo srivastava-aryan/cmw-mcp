@@ -70,7 +70,7 @@ Format your response EXACTLY as follows (use these exact headings):
 <one of: ✅ **LGTM** | ⚠️ **Needs Minor Changes** | 🚨 **Needs Major Changes**>
 
 ---
-*Review generated via MCP · Powered by ${process.env.GOOGLE_GEN_AI_MODEL || "Google Generative AI"}*`,
+*Review generated via MCP · Powered by ${process.env.GOOGLE_AI_MODEL || "Google Generative AI"}*`,
   ],
   [
     "human",
@@ -87,7 +87,7 @@ Individual file reviews:
 
 function getLLM() {
   return new ChatGoogle({
-    model: process.env.GOOGLE_GEN_AI_MODEL || "gemini-3.1-flash",
+    model: process.env.GOOGLE_AI_MODEL || "gemini-3.1-flash",
     apiKey: process.env.GOOGLE_API_KEY,
     temperature: 0.2,
     maxTokens: 1500,
