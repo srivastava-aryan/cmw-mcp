@@ -32,7 +32,7 @@ cp .env.example .env
 Fill in `.env`:
 - `GITHUB_TOKEN` — fine-grained PAT with **Pull requests** (read/write) and
   **Contents** (read) permissions on the repos you want to review
-- `GOOGLE_GEN_AI_API_KEY` — from Google AI Studio
+- `GOOGLE_API_KEY` — from Google AI Studio
 
 ## Running locally
 
@@ -43,7 +43,7 @@ npm start
 This starts the server on stdio. It won't print anything to stdout (that
 channel is reserved for the MCP protocol) — status logs go to stderr.
 
-## Connecting to Claude Desktop or Claude Code
+## Connecting to CLI or VS Code 
 
 Add to your MCP config (`claude_desktop_config.json` or equivalent):
 
@@ -55,18 +55,18 @@ Add to your MCP config (`claude_desktop_config.json` or equivalent):
       "args": ["/absolute/path/to/pr-reviewer-mcp/src/index.js"],
       "env": {
         "GITHUB_TOKEN": "your-token-here",
-        "GOOGLE_GEN_AI_API_KEY": "your-key-here"
+        "GOOGLE_API_KEY": "your-key-here"
       }
     }
   }
 }
 ```
 
-Restart Claude Desktop/Code, then you can ask things like:
+Restart your IDE, then you can ask things like:
 
 > "Review PR #12 on srivastava-aryan/dsa-tracker"
 
-and Claude will call `review_pr`, decide whether to post it, and call
+and it will call `review_pr`, decide whether to post it, and call
 `post_review_comment` if you confirm.
 
 ## What changed from the original app
