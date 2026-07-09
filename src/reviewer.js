@@ -87,8 +87,8 @@ Individual file reviews:
 
 function getLLM() {
   return new ChatGoogle({
-    model: process.env.GOOGLE_GEN_AI_MODEL || "gemini-2.5-flash",
-    apiKey: process.env.GOOGLE_GEN_AI_API_KEY,
+    model: process.env.GOOGLE_GEN_AI_MODEL || "gemini-3.1-flash",
+    apiKey: process.env.GOOGLE_API_KEY,
     temperature: 0.2,
     maxTokens: 1500,
   });
