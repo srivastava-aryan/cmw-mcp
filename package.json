@@ -1,0 +1,19 @@
+{
+  "name": "pr-reviewer-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing AI-powered GitHub PR review as tools (LangChain + Gemini)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/google": "^0.2.1",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@octokit/rest": "^21.0.0",
+    "zod": "^3.24.1",
+    "dotenv": "^16.4.0"
+  }
+}
